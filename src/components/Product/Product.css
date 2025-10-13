@@ -1,0 +1,209 @@
+/* Product.css - Turmeric Yellow Theme: Warm, vibrant yellows and golds for a unique, earthy feel inspired by turmeric. Attractive gallery with hover effects, smooth transitions, and responsive design. Focused only on product page elements. Main product image now auto-sized for natural aspect ratio. */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.product-page {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #FFF8DC 0%, #FDF5E6 100%); /* Subtle warm gradient background */
+  min-height: 100vh;
+  padding: 2rem;
+  color: #333;
+}
+
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: #DAA520; /* Turmeric gold */
+}
+
+.breadcrumb a {
+  color: #FF8C00; /* Warm orange accent */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.breadcrumb a:hover {
+  color: #FFD700; /* Bright gold on hover */
+}
+
+.breadcrumb a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.breadcrumb a:hover::after {
+  width: 100%;
+}
+
+.breadcrumb span {
+  color: #8B4513; /* Darker brown for contrast */
+  font-weight: 600;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 248, 220, 0.8); /* Semi-transparent warm yellow */
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2); /* Soft turmeric shadow */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.product-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-image {
+  width: 100%;
+  height: auto; /* Auto height for natural aspect ratio */
+  max-height: 500px; /* Optional max height to prevent overly tall images */
+  object-fit: contain; /* Changed to contain to preserve full image without cropping; use 'cover' if cropping is preferred */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3); /* Turmeric glow shadow */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(218, 165, 32, 0.4);
+}
+
+.product-gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-gallery img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.product-gallery img:hover,
+.product-gallery img.active {
+  opacity: 1;
+  border-color: #FFD700; /* Gold border on hover/active */
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+}
+
+.product-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.product-description h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #DAA520; /* Turmeric gold for title */
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.3); /* Subtle glow */
+  letter-spacing: 1px;
+}
+
+.product-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #FF8C00; /* Orange accent border */
+  transition: background 0.3s ease;
+}
+
+.product-description p:hover {
+  background: rgba(255, 248, 220, 0.9); /* Lighter yellow on hover */
+}
+
+/* Unique Gallery Enhancement: Subtle animation for image switching */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Loading and Error States - Attractive placeholders (only for product page) */
+.product-page p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #DAA520;
+  padding: 2rem;
+  background: rgba(255, 248, 220, 0.5);
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+/* Responsive Design for Product Page */
+@media (max-width: 768px) {
+  .product-page {
+    padding: 1rem;
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .product-image {
+    max-height: 400px; /* Adjusted max height for smaller screens */
+  }
+
+  .product-gallery img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .product-description h2 {
+    font-size: 2rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-gallery {
+    gap: 0.5rem;
+  }
+
+  .product-gallery img {
+    width: 50px;
+    height: 50px; /* Fixed the previous 70px typo for consistency */
+  }
+
+  .product-description p {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .product-image {
+    max-height: 350px; /* Further adjusted for very small screens */
+  }
+}

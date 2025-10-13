@@ -1,0 +1,420 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Dancing+Script:wght@700&display=swap");
+
+/* Color palette */
+:root {
+  --gold: #daa520;
+  --orange: #f4a261;
+  --dark: #8b4513;
+  --light: #fff8e1;
+  --text-dark: #2c1810;
+  --shadow: 0 4px 20px rgba(218, 165, 32, 0.15);
+  --transition: all 0.3s ease-in-out;
+  --radius: 12px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--light);
+  color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.8rem 5%;
+  background: linear-gradient(135deg, var(--light), var(--gold));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.navbar-logo img {
+  height: 45px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.navbar-logo img:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+.navbar-logo span {
+  font-family: "Dancing Script", cursive;
+  background: linear-gradient(45deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.navbar-links li {
+  position: relative;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+  border-radius: var(--radius);
+}
+.navbar-links a:hover {
+  background: rgba(218, 165, 32, 0.15);
+  color: var(--dark);
+  box-shadow: inset 0 0 8px rgba(218, 165, 32, 0.3);
+}
+
+/* Dropdown */
+.dropdown-toggle::after {
+  content: " ▾";
+  font-size: 0.8rem;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 220px; /* Slightly wider for nested content */
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition);
+}
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+.dropdown-menu li a:hover {
+  background: rgba(244, 162, 97, 0.2);
+  color: var(--dark);
+}
+
+/* Enhanced Product Dropdown Effects */
+/* Nested Dropdown Styling for Products */
+.nested-dropdown {
+  position: relative;
+}
+
+.nested-dropdown > span {
+  display: block;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(218, 165, 32, 0.1), transparent);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nested-dropdown > span::after {
+  content: " ▸"; /* Right arrow for nested toggle */
+  font-size: 0.7rem;
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.nested-dropdown:hover > span {
+  background: rgba(244, 162, 97, 0.3);
+  color: var(--gold);
+  transform: translateX(5px); /* Subtle slide effect */
+}
+
+.nested-dropdown:hover > span::after {
+  transform: translateX(3px); /* Arrow moves right on hover */
+}
+
+/* Nested Menu (Sub-dropdown for categories like Spices) */
+.nested-menu {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Positions to the right of the parent */
+  min-width: 200px;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px) scale(0.95);
+  transition: var(--transition);
+  z-index: 1001; /* Ensure it appears above other elements */
+  border-left: 3px solid var(--gold); /* Visual connection to parent */
+}
+
+.nested-dropdown:hover .nested-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) scale(1);
+}
+
+.nested-menu li a {
+  display: block;
+  padding: 0.7rem 1.2rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(218, 165, 32, 0.1);
+  transition: var(--transition);
+  white-space: nowrap; /* Prevent wrapping for clean look */
+}
+
+.nested-menu li:last-child a {
+  border-bottom: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.nested-menu li a:hover {
+  background: linear-gradient(90deg, rgba(244, 162, 97, 0.2), rgba(218, 165, 32, 0.1));
+  color: var(--gold);
+  padding-left: 1.5rem; /* Indent on hover for depth */
+  box-shadow: inset 0 0 5px rgba(218, 165, 32, 0.2);
+}
+
+/* Special handling for non-nested items in products dropdown (e.g., Bamboo Pellets) */
+.dropdown-menu li:not(.nested-dropdown) a {
+  font-weight: 500;
+  background: rgba(218, 165, 32, 0.05);
+  margin: 0.2rem 0;
+  border-radius: var(--radius);
+}
+
+.dropdown-menu li:not(.nested-dropdown) a:hover {
+  background: rgba(244, 162, 97, 0.25);
+  transform: translateX(8px); /* Slide effect for direct links */
+}
+
+/* Pulse animation for product dropdown on open (subtle highlight) */
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: var(--shadow); }
+  50% { box-shadow: 0 4px 25px rgba(218, 165, 32, 0.25); }
+}
+
+.dropdown-menu[style*="opacity: 1"] { /* Targets when visible via inline style from React */
+  animation: pulse-gold 0.6s ease-in-out;
+}
+
+/* Contact Button */
+.navbar-contact {
+  background: linear-gradient(45deg, var(--orange), var(--gold));
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.navbar-contact:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, var(--gold), var(--orange));
+  box-shadow: 0 0 15px rgba(244, 162, 97, 0.5);
+}
+
+/* ------------------- Responsive ------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .navbar-links {
+    gap: 1.2rem;
+  }
+  .navbar-links a {
+    font-size: 0.95rem;
+  }
+
+  /* Adjust nested menu width on tablets */
+  .nested-menu {
+    min-width: 180px;
+    left: 90%; /* Slightly overlap for smaller screens */
+  }
+}
+
+/* Mobile */
+/* Hamburger Icon */
+.mobile-hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  /* Dropdown menu toggle */
+  .dropdown-menu {
+    background: var(--light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 0.3rem 0;
+    position: static; /* Stack vertically */
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    min-width: auto;
+  }
+
+  /* Mobile: Hide nested menus initially, show as accordion on tap (but since no JS toggle, show expanded with indent) */
+  .nested-dropdown > span::after {
+    content: " ▾"; /* Down arrow for mobile */
+    right: 0.5rem;
+    transform: rotate(0deg);
+  }
+
+  .nested-dropdown > span {
+    padding: 0.8rem 2rem 0.8rem 1rem; /* Space for arrow */
+  }
+
+  .nested-menu {
+    position: static; /* Stack below in mobile */
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: rgba(244, 162, 97, 0.1); /* Subtle background for nesting */
+    min-width: auto;
+    border-left: none;
+    border-top: 1px solid rgba(218, 165, 32, 0.2);
+    margin-top: 0.2rem;
+    box-shadow: inset 0 2px 5px rgba(218, 165, 32, 0.1);
+    animation: slideDown 0.4s ease-out; /* Slide down effect on open */
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+      padding: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 300px; /* Adjust based on content */
+      padding: 0.5rem;
+    }
+  }
+
+  .nested-menu li a {
+    padding-left: 2.5rem; /* Deeper indent for sub-items */
+    font-size: 0.95rem;
+    background: none;
+    border-bottom: none;
+  }
+
+  .nested-menu li a:hover {
+    padding-left: 3rem;
+    background: rgba(218, 165, 32, 0.15);
+  }
+
+  .dropdown-menu li a {
+    padding-left: 2rem;
+  }
+
+  /* Disable side positioning for mobile */
+  .nested-dropdown:hover .nested-menu {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .navbar-links a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+  }
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .dropdown-menu li a {
+    padding-left: 2rem;
+    font-size: 0.95rem;
+  }
+  .navbar-contact {
+    align-self: center;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .navbar-logo span {
+    font-size: 1.3rem;
+  }
+  .navbar-logo img {
+    height: 38px;
+  }
+  .navbar-contact {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  /* Tighter spacing for small screens */
+  .nested-menu li a {
+    padding: 0.6rem 1rem 0.6rem 2.5rem;
+    font-size: 0.9rem;
+  }
+}

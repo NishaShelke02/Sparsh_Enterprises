@@ -1,0 +1,248 @@
+/* Import fonts (if not already global) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap");
+
+/* Reuse color palette from Navbar */
+:root {
+  --gold: #daa520;
+  --orange: #f4a261;
+  --dark: #8b4513;
+  --light: #fff8e1;
+  --text-dark: #2c1810;
+  --shadow: 0 4px 20px rgba(218, 165, 32, 0.15);
+  --transition: all 0.3s ease-in-out;
+  --radius: 12px;
+}
+
+/* About Container */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 5%;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  background: var(--light);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  background: linear-gradient(135deg, var(--light), var(--gold));
+  border-radius: var(--radius);
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Dancing Script", cursive;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Content Section */
+.about-content {
+  animation: fadeIn 1s ease-out;
+}
+
+.content-wrapper {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr; /* Side-by-side on desktop */
+}
+
+.about-text {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  color: var(--text-dark);
+}
+
+.about-quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--gold);
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(218, 165, 32, 0.05);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  margin: 2rem 0;
+  transition: var(--transition);
+}
+
+.about-quote:hover {
+  background: rgba(218, 165, 32, 0.1);
+  transform: translateX(10px);
+}
+
+/* Why Us Section */
+.why-us-section {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.why-us-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(218, 165, 32, 0.2);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  text-align: center;
+  background: linear-gradient(45deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.advantages-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  background: rgba(244, 162, 97, 0.05);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.advantages-list li:hover {
+  background: rgba(244, 162, 97, 0.15);
+  border-left-color: var(--gold);
+  transform: translateX(5px);
+}
+
+.icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.advantages-list li span:last-child {
+  line-height: 1.5;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.why-us-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--orange);
+  text-align: center;
+  padding: 1rem;
+  background: rgba(244, 162, 97, 0.05);
+  border-radius: var(--radius);
+  margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem 2%;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 2rem;
+  }
+
+  .why-us-section {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .advantages-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-quote,
+  .why-us-quote {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .advantages-list li span:last-child {
+    font-size: 0.95rem;
+  }
+}

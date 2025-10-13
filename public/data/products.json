@@ -1,0 +1,160 @@
+[
+  {
+    "category": "Turmeric",
+    "slug": "turmeric",
+    "products": [
+      {
+        "id": "1",
+        "name": "Turmeric Powder",
+        "slug": "turmeric-powder",
+        "image": "/images/powder.png",
+        "gallery": [
+          "/images/turmeric-powder1.png",
+          "/images/turmeric-powder2.png",
+          "/images/turmeric-powder3.png"
+        ],
+        "shortDescription": "“Golden Goodness – From Farm to Table”",
+        "description": "Our turmeric powder is made from carefully selected organic rhizomes, Solar-dried under controlled conditions, and ground to preserve nutrients. With its deep golden hue, rich aroma, and therapeutic potency, this powder is a must-have for kitchens, wellness blends, and nutraceuticals.\n\nKey Highlights: \n\n• 100% pure, chemical-free & organically grown\n• Solar dried for natural nutrient retention\n• High curcumin content for maximum health benefits\n• Perfect for cooking, teas, golden milk & supplements"
+      },
+      {
+        "id": "2",
+        "name": "Turmeric Fingers",
+        "slug": "turmeric-fingers",
+        "image": "/images/finger.png",
+        "gallery": [
+          "/images/finger1.png",
+          "/images/finger2.png",
+          "/images/finger3.png"
+        ],
+        "shortDescription": "Whole turmeric fingers.",
+        "description": "  Fresh and dried turmeric fingers, ideal for grinding into powder or using in recipes."
+       
+      },
+      {
+        "id": "3",
+        "name": "Turmeric Chips",
+        "slug": "turmeric-chips",
+        "image": "/images/chips3.png",
+        "gallery": [
+          "/images/chips1.png",
+          "/images/chips2.png",
+          "/images/chips.png"
+        ],
+        "shortDescription": "Crispy turmeric chips.",
+        "description": "Delicious and healthy turmeric chips, perfect as a snack or garnish."
+      }
+      ,
+      {
+        "id": "4",
+        "name": "Lakadong Turmeric Curcumin Extract",
+        "slug": "curcumin-extract",
+        "image": "/images/turmeric4.jpg",
+        "gallery": [
+          "/images/turmeric4.jpg",
+          "/images/turmeric4_1.jpg",
+          "/images/turmeric4_2.jpg"
+        ],
+        "shortDescription": "Concentrated Health – Clinically Powerful",
+        "description": "Concentrated turmeric curcumin extract for supplements and health products. Our curcumin extract is derived from organically grown Lakadong turmeric, ensuring clean and potent bioactive compounds. Extracted using advanced techniques, it delivers up to 95% curcumin concentration, making it a powerful ingredient for pharmaceuticals, nutraceuticals, and wellness formulations.\n\nKey Highlights:\n• Extracted from organic polyhouse-grown turmeric\n• Up to 95% standardized curcumin\n• Clinically proven antioxidant & anti-inflammatory properties\n• Perfect for capsules, tablets, health drinks, and skincare products"
+
+      },
+      {
+        "id": "5",
+        "name": "Lakadong Turmeric Oil",
+        "slug": "turmeric-oil",
+        "image": "/images/oil.png",
+        "gallery": [
+          "/images/oil1.png",
+          "/images/oil2.png",
+          "/images/oil3.png"
+        ],
+        "shortDescription": "Golden Elixir – Pure, Therapeutic & Organic",
+       "description": "Our turmeric essential oil is steam-distilled from fresh organic rhizomes cultivated in polyhouses. Rich in curcumin and ar-turmerone, this therapeutic-grade oil is prized for its antimicrobial, antioxidant, and skin-rejuvenating properties, making it a key ingredient for natural medicine, cosmetics, and aromatherapy.\n\nKey Highlights:\n• 100% pure & organic, steam-distilled from fresh rhizomes\n• Rich in natural curcumin & aromatic compounds\n• Therapeutic benefits: anti-inflammatory, antioxidant & antimicrobial\n• Widely used in skincare, aromatherapy & herbal wellness products"
+      }
+    ]
+  },
+  {
+    "category": "Processed Food",
+    "slug": "processed-food",
+    "products": [
+      {
+        "id": "1",
+        "name": "A2 Cow Ghee",
+        "slug": "a2-cow-ghee",
+        "image": "/images/cow.png",
+        "gallery": [
+          "/images/cow4.png",
+          "/images/cow1.png",
+          "/images/cow2.png",
+          "/images/cow3.png"
+        ],
+        "shortDescription": "🐄 Our Farm Promise – Pure Gir Cow A2 Ghee",
+        "description": "🌿 Our Cows\nOur indigenous Gir cows are raised on our own farms with love and respect. We follow the age-old tradition of treating cows as family. Unlike commercial dairies, our cows are never given hormone injections, artificial enhancers, or harmful antibiotics. They graze freely and are fed a natural diet of green fodder, grains, and Ayurvedic herbs. This ensures every drop of milk is pure, nutrient-rich, and full of natural goodness.\n________________________________________\n\n🥛 Our Process\nWe follow ethical milking practices – our calves always receive their rightful share of milk before we collect the rest. This balance nurtures both the cow and calf, keeping the cycle of nature intact.\nOur ghee is then prepared in small batches using the traditional Bilona method:\n• Fresh milk is set into curd\n• Curd is hand-churned in wooden vessels\n• Butter is simmered slowly on low flame\nThis process preserves the golden essence, grainy texture, rich aroma, and vital nutrients of our Gir Cow A2 Ghee.\n________________________________________\n\n🤝 Our Promise\n• 100% farm-to-home purity\n• Ethical & cruelty-free dairy practices\n• Naturally fed Gir cows, free from hormones & antibiotics\n• Traditional craftsmanship with modern hygiene standards\n• Eco-friendly packaging for sustainable living\n________________________________________\n\n✨ When you choose our Gir Cow A2 Ghee, you’re not just choosing a product—you’re embracing a lifestyle of purity, tradition, and holistic wellness."
+      }
+      
+    ]
+  },
+  {
+    "category": "Food & Vegetables",
+    "slug": "food-vegetables",
+    "products": [
+      {
+        "id": "1",
+        "name": "Capsicum",
+        "slug": "capsicum",
+        "image": "/images/capsicum.png",
+        "gallery": [
+          "/images/green.png",
+          "/images/red.png",
+          "/images/yellow.png",
+          "/images/orange.png",
+          "/images/green1.png",
+          "/images/red1.png",
+          "/images/yellow1.png",
+          "/images/orange1.png"
+
+
+        ],
+        "shortDescription": "🌱 Hydroponically Grown Organic Capsicum",
+        "description": "🌈 Colorful, Crunchy & Nutrient-Rich – Fresh from Sustainable Farms\n\nOur Red, Yellow, and Orange Capsicums are cultivated using advanced hydroponic farming techniques with 100% organic nutrients, ensuring pure, pesticide-free, and highly nutritious produce. Grown in a controlled environment, these vibrant bell peppers deliver superior taste, texture, and freshness—making them a premium choice for health-conscious consumers, restaurants, and retailers."
+      },
+      {
+        "id": "2",
+        "name": "Dragon Fruit",
+        "slug": "dragon-fruit",
+        "image": "/images/dragon1.jpg",
+        "gallery": [
+          "/images/dragon2.jpg",
+          "/images/dragon3.jpg",
+          "/images/dragon4.png"
+        ],
+        "shortDescription": "Fresh organic dragon fruit.",
+        "description": "  Fresh and dried ginger roots, ideal for cooking and making tea."
+       
+      }
+    ]
+  },
+  {
+    "category" : "Bamboo ",
+    "slug": "bamboo",
+    "products": [
+      {
+        "id": "1",
+        "name": "Bamboo pellets",
+        "slug": "bamboo-pellets",
+        "image": "/images/bamboo.png",
+        "gallery": [
+          "/images/bamboo1.png",
+          "/images/bamboo2.png",
+          "/images/bamboo3.png"
+        ],
+        "shortDescription": "Clean Energy, Responsibly Grown & Expertly Processed",
+        "description": "Our Bamboo Pellets are manufactured in our own state-of-the-art bamboo processing unit, using raw bamboo grown on carefully monitored farms. This ensures complete quality control—from cultivation to final production—so every pellet delivers consistency, purity, and superior performance. Made from 100% natural bamboo with no chemicals, binders, or additives, these pellets provide an eco-friendly and renewable alternative to coal and conventional fuels.\n\nEngineered for efficiency, our bamboo pellets offer high calorific value, low ash residue, and excellent combustion efficiency. Thanks to strict farm monitoring, we maintain uniform bamboo quality that translates into reliable, durable pellets. Designed for both domestic and industrial use, these pellets are an ideal solution for boilers, furnaces, heating systems, and biomass power plants.\n\n⭐ Key Highlights:\n• Manufactured in-house at our dedicated bamboo processing unit\n• Raw bamboo sourced only from closely monitored farms for quality consistency\n• High calorific value for long-lasting, efficient energy output\n• Low ash content, clean combustion, and minimal emissions\n• No chemicals, binders, or additives – 100% natural\n• Durable pellets with controlled moisture for easy storage & transport\n• Suitable for domestic heating, industrial boilers, and biomass energy plants\n\n🌿 Why Choose Our Bamboo Pellets?\n✔ Direct farm-to-factory production for traceable quality\n✔ Renewable, sustainable, and carbon-neutral energy source\n✔ Consistent bulk supply from monitored farms\n✔ Environmentally responsible and cost-effective fuel\n✔ Reliability of supply in long term arrangements\n✔ No seasonal impact on entire supply chain"
+
+      }
+    ]
+  }
+
+
+    
+]

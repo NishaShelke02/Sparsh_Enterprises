@@ -1,0 +1,16 @@
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 80px; /* Adjust based on Navbar height (e.g., 70-100px) */
+  padding-bottom: 2rem; /* Space for Footer */
+}
+
+/* Ensure Footer sticks to bottom if content is short */
+.app-wrapper > footer {
+  margin-top: auto;
+}

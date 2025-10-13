@@ -1,0 +1,258 @@
+/* src/components/Blogs/Blogs.css */
+
+/* Global Theme Variables - Turmeric Inspired (Consistent with Certification) */
+:root {
+  --turmeric-yellow: #E8C547; /* Warm golden yellow like turmeric powder */
+  --turmeric-orange: #D2691E; /* Deeper orange for accents, evoking spice warmth */
+  --light-beige: #FFF8DC; /* Soft beige background for a natural, earthy feel */
+  --dark-brown: #8B4513; /* Saddle brown for text and borders, like spice roots */
+  --white: #FFFFFF;
+  --shadow-light: rgba(232, 197, 71, 0.2); /* Subtle turmeric-tinted shadow */
+  --shadow-dark: rgba(139, 69, 19, 0.3); /* Deeper shadow for depth */
+  --font-primary: 'Arial', sans-serif; /* Clean, readable font */
+}
+
+/* Base Styles */
+.blogs-container {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--dark-brown);
+  background-color: var(--light-beige);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.blogs-hero {
+  background: linear-gradient(135deg, var(--turmeric-yellow) 0%, var(--turmeric-orange) 100%);
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.blogs-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); /* Subtle texture for spice feel */
+  pointer-events: none;
+}
+
+.blogs-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.blogs-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+  line-height: 1.2;
+}
+
+.blogs-hero .tagline {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.blogs-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.blogs-hero strong {
+  color: var(--white);
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Video Section */
+.blog-video-section {
+  padding: 60px 0;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.blog-video-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--turmeric-orange);
+  position: relative;
+}
+
+.blog-video-section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--turmeric-yellow);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.farm-video {
+  width: 100%;
+  height: 300px;
+  display: block;
+  border-radius: 12px;
+}
+
+.video-caption {
+  font-size: 1.1rem;
+  color: var(--dark-brown);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Blog Content Section */
+.blog-content {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--light-beige) 0%, var(--turmeric-yellow) 50%);
+  text-align: center;
+}
+
+.blog-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--dark-brown);
+  position: relative;
+}
+
+.blog-content h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--turmeric-orange);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.blog-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: var(--dark-brown);
+  opacity: 0.95;
+  text-align: left; /* Align paragraphs left for better readability */
+}
+
+.blog-content .container {
+  text-align: center; /* Center the h2 and overall section */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blogs-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .blogs-hero .tagline {
+    font-size: 1.3rem;
+  }
+
+  .blogs-hero p {
+    font-size: 1rem;
+  }
+
+  .blog-video-section h2,
+  .blog-content h2 {
+    font-size: 2rem;
+  }
+
+  .blog-video-section,
+  .blog-content {
+    padding: 40px 0;
+  }
+
+  .video-wrapper {
+    max-width: 100%;
+  }
+
+  .blog-content p {
+    font-size: 1.1rem;
+    text-align: center; /* Center on mobile for better flow */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .blogs-hero {
+    padding: 50px 0;
+  }
+
+  .blogs-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .farm-video {
+    border-radius: 8px;
+  }
+
+  .blog-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .blogs-hero::before,
+  .video-wrapper {
+    transition: none;
+  }
+}
+
+.blogs-hero:focus-within,
+.blog-video-section:focus-within,
+.blog-content:focus-within {
+  outline: none; /* Avoid outline on sections */
+}
+
+.farm-video:focus {
+  outline: 3px solid var(--turmeric-yellow);
+  outline-offset: 2px;
+}
+
+/* Video Controls Customization (Optional Enhancement) */
+.farm-video::-webkit-media-controls-panel {
+  background-color: var(--turmeric-orange);
+  color: var(--white);
+}
+
+.farm-video::-webkit-media-controls-play-button,
+.farm-video::-webkit-media-controls-volume-slider,
+.farm-video::-webkit-media-controls-current-time-display {
+  filter: brightness(1.2); /* Slight enhancement for visibility */
+}

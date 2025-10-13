@@ -1,0 +1,287 @@
+/* src/components/Certification/Certification.css */
+
+/* Global Theme Variables - Turmeric Inspired */
+:root {
+  --turmeric-yellow: #E8C547; /* Warm golden yellow like turmeric powder */
+  --turmeric-orange: #D2691E; /* Deeper orange for accents, evoking spice warmth */
+  --light-beige: #FFF8DC; /* Soft beige background for a natural, earthy feel */
+  --dark-brown: #8B4513; /* Saddle brown for text and borders, like spice roots */
+  --white: #FFFFFF;
+  --shadow-light: rgba(232, 197, 71, 0.2); /* Subtle turmeric-tinted shadow */
+  --shadow-dark: rgba(139, 69, 19, 0.3); /* Deeper shadow for depth */
+  --font-primary: 'Arial', sans-serif; /* Clean, readable font */
+}
+
+/* Base Styles */
+.certification-container {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--dark-brown);
+  background-color: var(--light-beige);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.certification-hero {
+  background: linear-gradient(135deg, var(--turmeric-yellow) 0%, var(--turmeric-orange) 100%);
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.certification-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); /* Subtle texture for spice feel */
+  pointer-events: none;
+}
+
+.certification-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.certification-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+}
+
+.certification-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.certification-hero strong {
+  color: var(--white);
+  font-weight: bold;
+}
+
+/* Certifications List Section */
+.certifications-list {
+  padding: 60px 0;
+  background-color: var(--white);
+}
+
+.certifications-list h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--turmeric-orange);
+  position: relative;
+}
+
+.certifications-list h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--turmeric-yellow);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.cert-item {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px var(--shadow-light);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--turmeric-yellow), transparent);
+  transition: left 0.5s;
+}
+
+.cert-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px var(--shadow-dark);
+  border-color: var(--turmeric-yellow);
+}
+
+.cert-item:hover::before {
+  left: 100%;
+}
+
+.cert-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--turmeric-orange);
+  font-weight: bold;
+}
+
+.cert-item p {
+  font-size: 1rem;
+  color: var(--dark-brown);
+  margin-bottom: 20px;
+}
+
+.cert-logo {
+  max-width: 120px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.cert-item:hover .cert-logo {
+  transform: scale(1.05);
+}
+
+/* CTA Button Styles (Adjusted for direct placement if needed) */
+.cta-button {
+  background: var(--turmeric-orange);
+  color: var(--white);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px var(--shadow-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin: 40px auto 0; /* Center and add margin if placed directly */
+  max-width: 200px;
+}
+
+.cta-button:hover {
+  background: var(--turmeric-yellow);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--shadow-light);
+  color: var(--dark-brown);
+}
+
+/* If CTA section is added back, use these styles */
+.cert-cta {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--light-beige) 0%, var(--turmeric-yellow) 100%);
+  text-align: center;
+}
+
+.cert-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-brown);
+}
+
+.cert-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--dark-brown);
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certification-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .certification-hero p {
+    font-size: 1rem;
+  }
+
+  .certifications-list h2,
+  .cert-cta h2 {
+    font-size: 2rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cert-item {
+    padding: 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .certification-hero {
+    padding: 50px 0;
+  }
+
+  .certifications-list,
+  .cert-cta {
+    padding: 40px 0;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .cert-item,
+  .cert-logo,
+  .cta-button {
+    transition: none;
+  }
+}
+
+.cert-item:focus-within,
+.cta-button:focus {
+  outline: 3px solid var(--turmeric-yellow);
+  outline-offset: 2px;
+}

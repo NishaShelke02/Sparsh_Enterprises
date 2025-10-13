@@ -1,0 +1,310 @@
+/* Services.css - Turmeric Yellow Theme */
+/* Primary colors inspired by turmeric: Warm yellows, golds, and earthy tones */
+/* Primary Yellow: #E8C547 (turmeric gold) */
+/* Secondary: #DAA520 (goldenrod) */
+/* Accent: #F5DEB3 (wheat/light yellow) */
+/* Background: #FFF8DC (cornsilk) or white for readability */
+/* Text: Dark brown (#8B4513) for headings, black for body */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #FFF8DC; /* Light corn silk background for the page */
+}
+
+/* Main Container */
+.services-page {
+  min-height: 100vh;
+  background-color: #FFF8DC;
+}
+
+/* Hero Section */
+.services-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(135deg, #E8C547 0%, #DAA520 100%);/* Turmeric gradient */
+              
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(216, 165, 32, 0.6); /* Semi-transparent golden overlay for depth */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #FFF8DC; /* Light background text for contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* Content Section */
+.services-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  background-color: #FFF8DC;
+}
+
+/* Generic Service Section */
+.service-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 40px 0;
+  border-bottom: 2px solid #F5DEB3; /* Light yellow border */
+  gap: 40px;
+}
+
+.service-section h2 {
+  font-size: 2.5rem;
+  color: #8B4513; /* Saddle brown for earthy feel */
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.service-section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #E8C547; /* Turmeric underline */
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* Intro Section Specific (first one) */
+.service-section:first-of-type {
+  text-align: center;
+  flex-direction: column;
+  border-bottom: none;
+  margin-bottom: 60px;
+}
+
+.service-section:first-of-type h2 {
+  font-size: 2.8rem;
+  color: #DAA520;
+}
+
+.service-section:first-of-type p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* Image Left/Right Sections */
+.service-section.image-left {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.service-section.image-right {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.service-text {
+  flex: 1;
+  padding: 20px;
+  background-color: rgba(245, 222, 179, 0.1); /* Subtle wheat background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(216, 165, 32, 0.1);
+}
+
+.service-text h2 {
+  text-align: left;
+  font-size: 2.2rem;
+}
+
+.service-text p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 15px;
+}
+
+.service-img {
+  flex: 1;
+  max-width: 50%;
+}
+
+.service-img img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid #E8C547; /* Turmeric border */
+}
+
+/* Why Love Us Section */
+.service-section.why-love {
+  flex-direction: column;
+  align-items: center;
+  border-bottom: none;
+  padding: 60px 0;
+  background-color: rgba(232, 197, 71, 0.05); /* Very light turmeric tint */
+  border-radius: 20px;
+  margin: 40px 0;
+}
+
+.why-love h2 {
+  font-size: 2.8rem;
+  color: #E8C547;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(216, 165, 32, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #DAA520; /* Golden top border */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(216, 165, 32, 0.3);
+}
+
+.feature-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #E8C547;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #8B4513;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    padding: 0 20px;
+  }
+
+  .services-hero {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .service-section {
+    flex-direction: column !important;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .service-img {
+    max-width: 100%;
+    order: -1; /* Image first on mobile */
+  }
+
+  .service-img img {
+    height: 250px;
+  }
+
+  .service-text {
+    text-align: center;
+  }
+
+  .service-text h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-content {
+    padding: 30px 15px;
+  }
+
+  .service-section:first-of-type h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .service-section h2,
+  .why-love h2 {
+    font-size: 2rem;
+  }
+
+  .feature-card {
+    padding: 20px 15px;
+  }
+}
+
+/* Smooth scrolling and animations */
+html {
+  scroll-behavior: smooth;
+}
+
+.service-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay animations for sections */
+.service-section:nth-child(2) { animation-delay: 0.2s; }
+.service-section:nth-child(3) { animation-delay: 0.4s; }
+.service-section:nth-child(4) { animation-delay: 0.6s; }
+.service-section:nth-child(5) { animation-delay: 0.8s; }
