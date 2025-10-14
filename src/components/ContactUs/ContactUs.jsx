@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ContactUs.css"; // We'll create this CSS file next
+import "./ContactUs.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,24 +16,17 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
-    }
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validateForm = () => {
     const newErrors = {};
     if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required.";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid.";
-    }
-    if (!formData.phoneNo.trim()) {
-      newErrors.phoneNo = "Phone Number is required.";
-    } else if (!/^\d{10}$/.test(formData.phoneNo.replace(/\D/g, ""))) {
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid.";
+    if (!formData.phoneNo.trim()) newErrors.phoneNo = "Phone Number is required.";
+    else if (!/^\d{10}$/.test(formData.phoneNo.replace(/\D/g, "")))
       newErrors.phoneNo = "Phone Number must be 10 digits (e.g., 9021176438).";
-    }
     if (!formData.subject.trim()) newErrors.subject = "Subject is required.";
     if (!formData.message.trim()) newErrors.message = "Message is required.";
     return newErrors;
@@ -52,8 +45,18 @@ const Contact = () => {
     setSubmitStatus("");
 
     try {
-      // simulate delay
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("https://sheetdb.io/api/v1/3ayae6y9lcwis", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: [formData] }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("SheetDB Error:", errorText);
+        setSubmitStatus("error");
+        return;
+      }
 
       setSubmitStatus("success");
       setFormData({

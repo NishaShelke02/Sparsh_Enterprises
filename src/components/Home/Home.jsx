@@ -45,7 +45,7 @@ const Home = () => {
 
     let interval;
     if (currentSlide === 1) {
-      interval = setInterval(nextSlide, 15000); // 15 seconds for second slide
+      interval = setInterval(nextSlide, 5000); // 15 seconds for second slide
     } else {
       interval = setInterval(nextSlide, 5000); // 5 seconds for other slides
     }
@@ -99,7 +99,7 @@ const Home = () => {
               <h1 className="slide-title">{slide.title}</h1>
               <p className="slide-subtitle">{slide.subtitle}</p>
               <Link
-                to={index === 0 ? "/about" : index === 1 ? "/services" : "/products"}
+                to={index === 0 ? "/products" : index === 1 ? "/products" : "/products"}
                 className="slide-cta"
               >
                 {slide.cta}

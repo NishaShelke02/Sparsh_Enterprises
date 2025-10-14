@@ -16,12 +16,25 @@
   overflow-x: hidden;
 }
 
-/* Hero Slider - Full viewport background */
+/* Hero Slider - Full viewport background with responsive height adjustment */
 .hero-slider {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* Default: Full viewport height */
   width: 100%;
   overflow: hidden;
+}
+
+/* Adjust height for smaller screens */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 80vh; /* Reduced height for tablets and mobiles to fit content better */
+  }
+  
+  @media (max-width: 480px) {
+    .hero-slider {
+      height: 70vh; /* Further reduced for very small screens */
+    }
+  }
 }
 
 .slide {
@@ -29,7 +42,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90%; /* Still 90% of hero-slider, but will scale with parent height */
   opacity: 0;
   transition: opacity var(--transition);
   display: flex;
@@ -85,6 +98,7 @@
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   transition: color var(--transition);
 }
+
 /* --- Different title color options per slide --- */
 .slide-title.red {
   color: #e63946; /* Bright red */
@@ -109,7 +123,6 @@
 .slide-title.white {
   color: #ffffff;
 }
-
 
 .slide-subtitle {
   font-size: 1.5rem;
@@ -249,6 +262,7 @@
     font-size: 1rem;
   }
 }
+
 /* Features Section - Added with logos/icons, cards, and effects */
 .features-section {
   margin: 3rem 0 2rem; /* Spacing for balance */
