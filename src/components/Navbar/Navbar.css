@@ -24,23 +24,25 @@ body {
   font-family: "Poppins", sans-serif;
   background: var(--light);
   color: var(--text-dark);
+  overflow-x: hidden;  /* Prevent horizontal overflow */
 }
 
-/* Top Header - Fixed to ensure it's visible */
+/* Top Header */
 .top-header {
-  background: linear-gradient(135deg, var(--light), var(--gold)); /* Subtle gradient */
+  background: linear-gradient(135deg, var(--light), var(--gold));
   padding: 0.8rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid rgba(218, 165, 32, 0.1);
   box-shadow: 0 2px 10px rgba(218, 165, 32, 0.1);
-  position: fixed; /* Make it fixed to stay at the top */
-  top: 0; /* Starts at the very top */
+  position: fixed;
+  flex-wrap: wrap;
+  top: 0;
   width: 100%;
-  z-index: 999; /* Just below navbar's z-index */
+  z-index: 999;
   transition: var(--transition);
-
+  overflow: hidden;  /* Prevent content overflow */
 }
 
 .top-header:hover {
@@ -50,6 +52,7 @@ body {
 .top-header-left {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
   font-size: 0.95rem;
   font-weight: 500;
 }
@@ -69,7 +72,7 @@ body {
 
 .top-header-right {
   display: flex;
-  gap: 1.2rem;
+  gap: 10px;
 }
 
 .top-header-right a {
@@ -88,10 +91,10 @@ body {
   box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
 }
 
-/* Navbar - Adjusted for spacing below top-header */
+/* Navbar */
 .navbar {
   position: fixed;
-  top: 60px; /* Add space to account for top-header (adjust based on its height) */
+  top: 60px;  /* Default top for larger screens */
   left: 0;
   width: 100%;
   height: 80px;
@@ -101,16 +104,15 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 6px 20px rgba(218, 165, 32, 0.2);
-  z-index: 1000; /* Higher than top-header */
+  z-index: 1000;
   transition: var(--transition);
   border-bottom: 2px solid rgba(218, 165, 32, 0.05);
+  overflow: hidden;  /* Prevent content overflow */
 }
 
 .navbar:hover {
   box-shadow: 0 8px 25px rgba(218, 165, 32, 0.25);
 }
-
-/* The rest of your CSS remains the same as in the previous response... */
 
 .navbar-logo {
   display: flex;
@@ -125,11 +127,7 @@ body {
 .navbar-logo img {
   height: 120px;
   width: auto;
- 
-  
 }
-
-
 
 .navbar-logo span {
   font-family: "Dancing Script", cursive;
@@ -327,6 +325,118 @@ body {
   box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
 }
 
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .top-header {
+    padding: 0.5rem 3%;
+    font-size: 0.8rem;
+    flex-direction: column;
+  }
+  
+  .navbar {
+    top: 30px;  /* Adjusted top position as per your request */
+    height: 60px;
+    padding: 0.5rem 3%;
+  }
+  
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-logo img {
+    height: 80px;
+  }
+  
+  .mobile-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  .dropdown.open .dropdown-menu {
+    display: block;
+    max-height: none;
+  }
+  
+  .mobile-hamburger span {
+    width: 28px;
+    height: 3px;
+    background: var(--dark);
+    border-radius: 5px;
+    transition: var(--transition);
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 30px;  /* Updated to match navbar's new top */
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    overflow-y: auto;
+  }
+
+  .navbar-links.open {
+    right: 0;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .dropdown-menu,
+  .nested-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    padding-left: 1rem;
+  }
+
+  .nested-menu {
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-toggle::after {
+    content: "▾";
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+
+  .dropdown.open .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+
+  .mobile-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .mobile-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
 @media (max-width: 1024px) {
   .navbar-links {
     gap: 1.2rem;
@@ -337,31 +447,6 @@ body {
   .nested-menu {
     min-width: 180px;
     left: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .mobile-hamburger {
-    display: block;
-  }
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-  }
-  .navbar-links.open {
-    display: flex;
-  }
-  .dropdown-menu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-  .nested-menu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
   }
 }
 
