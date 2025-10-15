@@ -19,7 +19,7 @@
 /* Hero Slider - Full viewport background with responsive height adjustment */
 .hero-slider {
   position: relative;
-  height: 100vh; /* Default: Full viewport height */
+  height: 100dvh; /* Default: Full viewport height */
   width: 100%;
   overflow: hidden;
 }
@@ -27,12 +27,12 @@
 /* Adjust height for smaller screens */
 @media (max-width: 768px) {
   .hero-slider {
-    height: 80vh; /* Reduced height for tablets and mobiles to fit content better */
+    height: 100dvh; /* Reduced height for tablets and mobiles to fit content better */
   }
   
   @media (max-width: 480px) {
     .hero-slider {
-      height: 70vh; /* Further reduced for very small screens */
+      height: 10dvh; /* Further reduced for very small screens */
     }
   }
 }
