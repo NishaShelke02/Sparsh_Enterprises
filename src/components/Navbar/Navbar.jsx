@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import "./Navbar.css";
@@ -7,10 +7,33 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleMobileDropdown = (type) => {
+    console.log(`Toggling dropdown for ${type}`);  // Debugging log
+    if (type === "products") {
+      setProductsDropdownOpen((prev) => !prev);
+    } else if (type === "about") {
+      setDropdownOpen((prev) => !prev);
+    }
+  };
+
+  const closeAllMenus = () => {
+    setMobileMenuOpen(false);
+    setProductsDropdownOpen(false);
+    setDropdownOpen(false);
+  };
 
   return (
     <>
-      {/* 🔹 Top Header */}
+      {/* Top Header */}
       <div className="top-header">
         <div className="top-header-left">
           <span>📍 Amravati, Maharashtra, India</span>
@@ -24,91 +47,90 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* 🔸 Main Navbar */}
+      {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-logo">
           <img src="/logo.png" alt="Logo" />
-          
         </div>
 
         <div
-          className="mobile-hamburger"
+          className={`mobile-hamburger ${mobileMenuOpen ? "active" : ""}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
         <ul className={`navbar-links ${mobileMenuOpen ? "open" : ""}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/" onClick={closeAllMenus}>Home</Link></li>
+          <li><Link to="/services" onClick={closeAllMenus}>Services</Link></li>
 
-          {/* Our Products Dropdown */}
-          <li
-            className="dropdown"
-            onMouseEnter={() => setProductsDropdownOpen(true)}
-            onMouseLeave={() => setProductsDropdownOpen(false)}
+          <li className={`dropdown ${productsDropdownOpen ? "open" : ""}`}
+            onMouseEnter={!isMobile ? () => setProductsDropdownOpen(true) : undefined}
+            onMouseLeave={!isMobile ? () => setProductsDropdownOpen(false) : undefined}
           >
-            <span className="dropdown-toggle">Our Products</span>
+            <span
+              className="dropdown-toggle"
+              onClick={isMobile ? () => toggleMobileDropdown("products") : undefined}
+            >
+              Our Products
+            </span>
             {productsDropdownOpen && (
               <ul className="dropdown-menu">
                 <li className="nested-dropdown">
                   <span>Lakadong Turmeric</span>
                   <ul className="nested-menu">
-                    <li><Link to="/products/turmeric/turmeric-powder">Turmeric Powder</Link></li>
-                    <li><Link to="/products/turmeric/turmeric-fingers">Turmeric Fingers</Link></li>
-                    <li><Link to="/products/turmeric/turmeric-chips">Turmeric Chips</Link></li>
-                    <li><Link to="/products/turmeric/curcumin-extract">Turmeric Curcumin Extract</Link></li>
-                    <li><Link to="/products/turmeric/turmeric-oil">Turmeric Oil</Link></li>
+                    <li><Link to="/products/turmeric/turmeric-powder" onClick={closeAllMenus}>Turmeric Powder</Link></li>
+                    <li><Link to="/products/turmeric/turmeric-fingers" onClick={closeAllMenus}>Turmeric Fingers</Link></li>
+                    <li><Link to="/products/turmeric/turmeric-chips" onClick={closeAllMenus}>Turmeric Chips</Link></li>
+                    <li><Link to="/products/turmeric/curcumin-extract" onClick={closeAllMenus}>Curcumin Extract</Link></li>
+                    <li><Link to="/products/turmeric/turmeric-oil" onClick={closeAllMenus}>Turmeric Oil</Link></li>
                   </ul>
                 </li>
-
                 <li className="nested-dropdown">
                   <span>Processed Food</span>
                   <ul className="nested-menu">
-                    <li><Link to="/products/processed-food/a2-cow-ghee">A2 Cow Ghee</Link></li>
+                    <li><Link to="/products/processed-food/a2-cow-ghee" onClick={closeAllMenus}>A2 Cow Ghee</Link></li>
                   </ul>
                 </li>
-
                 <li className="nested-dropdown">
                   <span>Food & Vegetables</span>
                   <ul className="nested-menu">
-                    <li><Link to="/products/food-vegetables/capsicum">Capsicum</Link></li>
-                    <li><Link to="/products/food-vegetables/dragon-fruit">Dragon Fruit</Link></li>
+                    <li><Link to="/products/food-vegetables/capsicum" onClick={closeAllMenus}>Capsicum</Link></li>
+                    <li><Link to="/products/food-vegetables/dragon-fruit" onClick={closeAllMenus}>Dragon Fruit</Link></li>
                   </ul>
                 </li>
-
                 <li className="nested-dropdown">
                   <span>Bamboo</span>
                   <ul className="nested-menu">
-                    <li><Link to="/products/bamboo/bamboo-pellets">Bamboo Pellets</Link></li>
+                    <li><Link to="/products/bamboo/bamboo-pellets" onClick={closeAllMenus}>Bamboo Pellets</Link></li>
                   </ul>
                 </li>
               </ul>
             )}
           </li>
 
-          {/* About Us Dropdown */}
-          <li
-            className="dropdown"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
+          <li className={`dropdown ${dropdownOpen ? "open" : ""}`}
+            onMouseEnter={!isMobile ? () => setDropdownOpen(true) : undefined}
+            onMouseLeave={!isMobile ? () => setDropdownOpen(false) : undefined}
           >
-            <span className="dropdown-toggle">About Us</span>
+            <span
+              className="dropdown-toggle"
+              onClick={isMobile ? () => toggleMobileDropdown("about") : undefined}
+            >
+              About Us
+            </span>
             {dropdownOpen && (
               <ul className="dropdown-menu">
-                <li><Link to="/about">Our Company</Link></li>
-                <li><Link to="/about/certification">Certification</Link></li>
+                <li><Link to="/about" onClick={closeAllMenus}>Our Company</Link></li>
+                <li><Link to="/about/certification" onClick={closeAllMenus}>Certification</Link></li>
               </ul>
             )}
           </li>
 
-          <li><Link to="/blogs">Blogs</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
+          <li><Link to="/blogs" onClick={closeAllMenus}>Blogs</Link></li>
+          <li><Link to="/contact" onClick={closeAllMenus}>Contact Us</Link></li>
         </ul>
 
         <div className="navbar-contact">📞 +91 9021176438</div>
