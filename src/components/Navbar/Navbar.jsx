@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+//import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -33,20 +33,16 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Header */}
+
+      {/* 🏠 Top Header */}
       <div className="top-header">
-        <div className="top-header-left">
-          <span>📍 Amravati, Maharashtra, India</span>
-          <span>📧 sparshenterprise97@gmail.com</span>
-        </div>
-        <div className="top-header-right">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-          <a href="https://wa.me/919021176438" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+        <div className="top-left">
+          📍 <span>Amravati, Maharashtra, India</span>
+          ✉️ <a href="mailto:info@greenroots.com">sparshenterprise97@gmail.com</a>
         </div>
       </div>
-
+      
+      
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-logo">
@@ -66,7 +62,8 @@ const Navbar = () => {
           <li><Link to="/" onClick={closeAllMenus}>Home</Link></li>
           <li><Link to="/services" onClick={closeAllMenus}>Services</Link></li>
 
-          <li className={`dropdown ${productsDropdownOpen ? "open" : ""}`}
+          <li 
+            className={`dropdown ${productsDropdownOpen ? "open" : ""}`}
             onMouseEnter={!isMobile ? () => setProductsDropdownOpen(true) : undefined}
             onMouseLeave={!isMobile ? () => setProductsDropdownOpen(false) : undefined}
           >
@@ -133,7 +130,7 @@ const Navbar = () => {
           <li><Link to="/contact" onClick={closeAllMenus}>Contact Us</Link></li>
         </ul>
 
-        <div className="navbar-contact">📞 +91 9021176438</div>
+        <div className="navbar-contact">📞<a href="tel:+919021176438">+91 9021176438 </a></div>
       </nav>
     </>
   );

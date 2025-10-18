@@ -44,20 +44,7 @@
         "description": "Delicious and healthy turmeric chips, perfect as a snack or garnish."
       }
       ,
-      {
-        "id": "4",
-        "name": "Lakadong Turmeric Curcumin Extract",
-        "slug": "curcumin-extract",
-        "image": "/images/turmeric4.jpg",
-        "gallery": [
-          "/images/turmeric4.jpg",
-          "/images/turmeric4_1.jpg",
-          "/images/turmeric4_2.jpg"
-        ],
-        "shortDescription": "Concentrated Health – Clinically Powerful",
-        "description": "Concentrated turmeric curcumin extract for supplements and health products. Our curcumin extract is derived from organically grown Lakadong turmeric, ensuring clean and potent bioactive compounds. Extracted using advanced techniques, it delivers up to 95% curcumin concentration, making it a powerful ingredient for pharmaceuticals, nutraceuticals, and wellness formulations.\n\nKey Highlights:\n• Extracted from organic polyhouse-grown turmeric\n• Up to 95% standardized curcumin\n• Clinically proven antioxidant & anti-inflammatory properties\n• Perfect for capsules, tablets, health drinks, and skincare products"
-
-      },
+    
       {
         "id": "5",
         "name": "Lakadong Turmeric Oil",
