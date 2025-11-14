@@ -18,13 +18,17 @@
 
 /* Full container */
 .home-container {
-  min-height: 100vh;
+  
   overflow-x: hidden;
+ 
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /* Hero Slider - Full viewport background with responsive height adjustment */
 .hero-slider {
   position: relative;
+  margin: 0;
   height: 100vh; /* Default: Full viewport height */
   width: 100%;
   overflow: hidden;
@@ -33,16 +37,16 @@
 /* Slide */
 .slide {
   position: absolute;
-  top: 0;
+  
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 88%;
   opacity: 0;
   transition: opacity var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 100;
 }
 
 .slide.active {

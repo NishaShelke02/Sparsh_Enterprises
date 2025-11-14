@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="top-header">
         <div className="top-left">
           📍 <span>Amravati, Maharashtra, India</span>
-          ✉️ <a href="mailto:info@greenroots.com">sparshenterprise97@gmail.com</a>
+          ✉️ <a href="mailto:sparshenterprise97@gmail.com">sparshenterprise97@gmail.com</a>
         </div>
       </div>
       
@@ -46,7 +46,7 @@ const Navbar = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-logo">
-          <img src="/logo.png" alt="Logo" />
+          <img src="/logo1.png" alt="Logo" />
         </div>
 
         <div

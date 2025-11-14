@@ -43,12 +43,8 @@ const Home = () => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     };
 
-    let interval;
-    if (currentSlide === 1) {
-      interval = setInterval(nextSlide, 5000); // 15 seconds for second slide
-    } else {
-      interval = setInterval(nextSlide, 5000); // 5 seconds for other slides
-    }
+    const intervalTime = currentSlide === 1 ? 15000 : 5000; // 15 seconds for second slide, 5 for others
+    const interval = setInterval(nextSlide, intervalTime);
 
     return () => clearInterval(interval);
   }, [currentSlide, slides.length]);
@@ -99,7 +95,7 @@ const Home = () => {
               <h1 className="slide-title">{slide.title}</h1>
               <p className="slide-subtitle">{slide.subtitle}</p>
               <Link
-                to={index === 0 ? "/products" : index === 1 ? "/products" : "/products"}
+                to="/products"
                 className="slide-cta"
               >
                 {slide.cta}
@@ -119,6 +115,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      
 
       {/* Welcome Section */}
       <section className="welcome-section">
@@ -145,7 +142,6 @@ const Home = () => {
           </section>
           {/* Explore Products Button */}
 
-
           <Link to="/products" className="explore-btn">
             Explore Our Products
           </Link>
@@ -153,7 +149,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      
+      {/* <Footer /> */} {/* Uncomment if you want to include the footer */}
     </div>
   );
 };
