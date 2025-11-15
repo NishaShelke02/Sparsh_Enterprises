@@ -11,6 +11,7 @@ const Home = () => {
       image: "/images/plant.png",
       title: "100% Natural From Farm",
       subtitle: "Freshly harvested turmeric straight from our organic farms.",
+      links:"/blogs",
       cta: "Discover Our Farms"
     },
     {
@@ -18,21 +19,24 @@ const Home = () => {
       image: "/images/turmeric.jpg",
       title: "Turmeric Exporter",
       subtitle: "Global leaders in premium turmeric export with quality assurance.",
-      cta: "Explore Exports"
+      cta: "Explore Exports",
+      links: "/products/lackadong-turmeric/turmeric-powder"
     },
     {
       id: 3,
       image: "/images/dragon.jpg",
       title: "Dragon Fruit",
       subtitle: "Nutritious and delicious dragon fruit, naturally sweet and healthy.",
-      cta: "Buy Dragon Fruit"
+      cta: "Buy Dragon Fruit",
+      links: "/products/food-vegetables/dragon-fruit"
     },
     {
       id: 4,
       image: "/images/capsicum.png",
       title: "Capsicum - Red, Green, Yellow, Orange",
       subtitle: "Vibrant and crunchy capsicums in red, green, yellow, and orange — full of flavor and freshness.",
-      cta: "Buy Capsicum"
+      cta: "Buy Capsicum",
+      links: "/products/food-vegetables/capsicum"
     }
   ];
 
@@ -95,7 +99,8 @@ const Home = () => {
               <h1 className="slide-title">{slide.title}</h1>
               <p className="slide-subtitle">{slide.subtitle}</p>
               <Link
-                to="/products"
+                to={slide.links ? slide.links : "/products"}
+
                 className="slide-cta"
               >
                 {slide.cta}
@@ -126,6 +131,12 @@ const Home = () => {
           </p>
 
           <h3>Lakadong Turmeric Powder (Curcumin 7–10%)</h3>
+          <p>
+            Sourced from the Pollyhouse, our Lakadong Turmeric Powder is renowned for its high curcumin content (7–10%), vibrant color, and potent health benefits. Perfect for culinary and medicinal uses.
+          </p>
+          
+          {/*product card* /}
+
           
           {/* Features Section */}
           <section className="features-section">

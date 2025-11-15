@@ -21,15 +21,15 @@
   
   overflow-x: hidden;
  
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: 0px;
+  padding-top: 55px;
 }
 
 /* Hero Slider - Full viewport background with responsive height adjustment */
 .hero-slider {
   position: relative;
   margin: 0;
-  height: 100vh; /* Default: Full viewport height */
+  height: 650px; /* Default: Full viewport height */
   width: 100%;
   overflow: hidden;
 }

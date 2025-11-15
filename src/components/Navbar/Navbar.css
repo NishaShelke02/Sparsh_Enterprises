@@ -1,20 +1,6 @@
-/* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Dancing+Script:wght@700&display=swap");
+/* Navbar.css - Full CSS with Turmeric Theme and Responsive Design */
 
-/* Color Palette and Variables */
-:root {
-  --gold: #daa520;
-  --orange: #f4a261;
-  --dark: #8b4513;
-  --light: #fff8e1;
-  --text-dark: #2c1810;
-  --shadow: 0 4px 20px rgba(218, 165, 32, 0.15);
-  --radius: 12px;
-  --accent-gradient: linear-gradient(45deg, var(--gold), var(--orange));
-  --transition: all 0.8s cubic-bezier(0.39, 0.58, 0.57, 1);
-}
-
-/* Reset */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -22,420 +8,352 @@
 }
 
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  background: var(--light);
-  color: var(--text-dark);
-  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-/* Top Header */
-.top-header {
+/* Turmeric Theme Colors and Variables */
+:root {
+  --primary-color: #FFD700; /* Gold (turmeric yellow) */
+  --secondary-color: #FFA500; /* Orange */
+  --accent-color: #8B4513; /* Saddle Brown (earthy) */
+  --background-color: #FFF8DC; /* Cream (light turmeric-inspired) */
+  --text-color: #333;
+  --hover-color: #FF8C00; /* Dark Orange */
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+  --light: #FFF8DC; /* Light cream for gradient */
+  --gold: #FFD700; /* Turmeric gold for gradient */
+}
+
+/* ------- TOP INFO BAR ------- */
+.top-bar {
   background: linear-gradient(135deg, var(--light), var(--gold));
-  padding: 0.4rem 5%;
-  display: flex;
-  justify-content: center; /* Changed to center to match JSX structure */
-  align-items: center;
-  border-bottom: 2px solid rgba(218, 165, 32, 0.06);
-  box-shadow: 0 2px 10px rgba(218, 165, 32, 0.10);
-  position: fixed;
-  width: 100%;
-  z-index: 1050;
-  transition: var(--transition);
-  height: auto; /* Changed from fixed 20px to auto for flexibility */
-}
-
-.top-left { /* Corrected class name to match JSX */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.top-left span {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--dark);
-  transition: var(--transition);
-}
-
-.top-left span:hover {
-  color: var(--gold);
-}
-
-.top-left a {
-  color: var(--text-dark);
-  text-decoration: none;
-  font-weight: bold;
-  transition: var(--transition);
-}
-
-.top-left a:hover {
-  color: var(--gold);
-}
-
-/* Removed .top-header-right as it's not in JSX */
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 30px; /* Adjusted to avoid overlap with top-header (assuming ~40px height) */
-  left: 0;
-  width: 100%;
-  height: 78px;
-  padding: 0.8rem 2%;
-  background: #fff;
+  padding: 3px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 6px 20px rgba(218, 165, 32, 0.17);
-  z-index: 1000;
-  border-bottom: 2px solid rgba(218, 165, 32, 0.04);
+  border-bottom: 2px solid rgba(218, 165, 32, 0.06);
+  box-shadow: var(--shadow-light);
+  position: fixed;
+  width: 100%;
+
+  z-index: 1050;
+  transition: var(--transition);
+  height: auto;
+  min-height: 40px; /* Ensure consistent height */
+  color: var(--text-color);
 }
 
-/* Logo Styles */
-.navbar-logo {
+.top-left {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 1.7rem;
-  font-weight: 900;
-  color: var(--dark);
-  transition: var(--transition);
+  gap: 20px;
 }
 
-.navbar-logo img {
-  height: 65px;
-  mix-blend-mode: multiply;
+.top-left a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.navbar-logo span {
-  font-family: "Dancing Script", cursive;
-  background: var(--accent-gradient);
+.top-left a:hover {
+  color: var(--secondary-color);
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-right a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.top-right a:hover {
+  color: var(--primary-color);
+}
+
+/* ------- MAIN NAVBAR ------- */
+.navbar {
+  background-color: var(--background-color);
+  box-shadow: 0 2px 5px var(--shadow);
+  position: fixed; 
+  margin-top: 10px;
+
+  top: 10px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
   
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 5px rgba(218, 165, 32, 0.09);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 /* Nav Links */
-.navbar-links {
-  display: flex;
+.nav-links {
   list-style: none;
-  gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.navbar-links li {
+.nav-links li {
   position: relative;
 }
 
-.navbar-links a,
-.dropdown-toggle {
+.nav-links a {
+  color: var(--text-color);
   text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  border-radius: var(--radius);
-  transition: var(--transition);
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+  background: linear-gradient(135deg, var(--light), var(--gold));
+  
+}
+
+/* Dropdown Styles */
+.dropdown-toggle {
   cursor: pointer;
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.navbar-links a:hover,
-.dropdown-toggle:hover {
-  background: rgba(218, 165, 32, 0.08);
-  color: var(--gold);
-  box-shadow: 0 2px 8px rgba(244, 162, 97, 0.10);
+.arrow {
+  font-size: 12px;
+  transition: transform 0.3s;
 }
 
-/* Dropdown Styles - Enhanced Effects */
-.dropdown-toggle::after {
-  content: " ▾";
-  font-size: 0.85em;
-  margin-left: 0.25rem;
-  pointer-events: none;
-  color: var(--gold);
-  transition: transform 0.9s ease;
-}
-
-.dropdown:hover .dropdown-toggle::after {
+.dropdown.active .arrow {
   transform: rotate(180deg);
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 2.5rem;
+  top: 100%;
   left: 0;
-  min-width: 210px;
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background-color: white;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px var(--shadow);
+  min-width: 200px;
+  z-index: 1000;
   list-style: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px) scale(0.95);
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-  z-index: 9;
-  overflow: hidden;
+  padding: 10px 0;
 }
 
-.dropdown.open .dropdown-menu,
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-}
-
-/* Nested Dropdowns - Enhanced Effects */
-.nested-dropdown > span {
-  display: block;
-  padding: 0.7rem 1rem;
-  font-weight: 600;
-  color: var(--dark);
-  background: rgba(218, 165, 32, 0.06);
-  border-radius: var(--radius);
-  margin-bottom: 2px;
-  cursor: pointer;
-  transition: var(--transition);
+.dropdown-menu li {
   position: relative;
 }
 
-.nested-dropdown > span::after {
-  content: " ▸";
-  font-size: 0.75em;
-  position: absolute;
-  right: 1rem;
-  color: var(--orange);
-  transition: transform 0.3s ease;
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-.nested-dropdown:hover > span,
-.nested-dropdown.active > span {
-  background: rgba(244, 162, 97, 0.18);
-  color: var(--gold);
-  transform: translateX(5px);
+.dropdown-menu a:hover {
+  background-color: var(--background-color);
 }
 
-.nested-dropdown:hover > span::after {
-  transform: translateX(5px);
+/* Nested Dropdown */
+.nested-dropdown {
+  position: relative;
 }
 
-/* Nested Menu - Enhanced Effects */
+.nested-dropdown span {
+  display: block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
 .nested-menu {
   position: absolute;
-  top: 0;
   left: 100%;
-  min-width: 190px;
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-20px) scale(0.95);
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-  border-left: 3px solid var(--gold);
-  z-index: 10;
-  overflow: hidden;
-}
-
-.nested-dropdown:hover .nested-menu,
-.nested-dropdown.active .nested-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0) scale(1);
-}
-
-.nested-menu li a {
-  display: block;
-  padding: 0.7rem 1.1rem;
-  color: var(--dark);
-  border-bottom: 1px solid rgba(218, 165, 32, 0.10);
-  font-weight: 500;
-  font-size: 0.98rem;
-  transition: var(--transition);
-  position: relative;
-}
-
-.nested-menu li a:hover {
-  background: rgba(244, 162, 97, 0.12);
-  color: var(--gold);
-  padding-left: 1.5rem;
-  transform: translateX(5px);
-}
-
-.dropdown-menu li:not(.nested-dropdown) a {
-  padding: 0.7rem 1.1rem;
-  border-radius: 8px;
-  margin-bottom: 3px;
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.dropdown-menu li:not(.nested-dropdown) a:hover {
-  background: rgba(244, 162, 97, 0.12);
-  color: var(--gold);
-  transform: translateX(5px);
-}
-
-/* Contact Button */
-.navbar-contact {
-  background: var(--accent-gradient);
-  color: white;
-  font-weight: 600;
-  padding: 0.65rem 1.7rem;
-  border-radius: 50px;
-  box-shadow: 0 2px 11px rgba(218, 165, 32, 0.18);
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: 1rem;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-
-.navbar-contact:hover {
-  background: linear-gradient(90deg, #f4a261 40%, #daa520 100%);
-  box-shadow: 0 4px 16px rgba(244, 162, 97, 0.21);
-  transform: scale(1.07) translateY(-2px);
-  color: #fff;
-}
-
-.navbar-contact a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Mobile Styles */
-.mobile-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.mobile-hamburger span {
-  width: 28px;
-  height: 3px;
-  background: var(--dark);
+  top: 0;
+  background-color: white;
+  border: 1px solid var(--accent-color);
   border-radius: 5px;
-  transition: var(--transition);
+  box-shadow: 0 4px 8px var(--shadow);
+  min-width: 200px;
+  list-style: none;
+  padding: 10px 0;
+  display: none;
 }
 
-@media (max-width: 900px) {
-  .navbar {
-    height: 65px;
-    padding: 0.6rem 3%;
-    top: 40px; /* Adjusted for consistency */
-  }
-
-  .navbar-logo img {
-    height: 46px;
-  }
-
-  .navbar-logo span {
-    font-size: 1.3rem;
-  }
+.nested-dropdown:hover .nested-menu {
+  display: block;
 }
 
+/* ------- RESPONSIVE DESIGN ------- */
+
+/* Tablet and Mobile */
 @media (max-width: 768px) {
-  .top-header {
-    padding: 0.76rem 2%;
+  .hamburger {
+    display: flex;
   }
 
-  .navbar {
-    top: 50px; /* Adjusted to account for top-header height */
-    height: 59px;
-    padding: 0.45rem 3.5%;
-  }
-
-  .navbar-logo img {
-    height: 50px;
-  }
-
-  .navbar-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75vw;
-    height: 100vh;
-    background: #fffef3;
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width:100%;
+    background-color: var(--background-color);
     flex-direction: column;
-    justify-content: start;
     align-items: flex-start;
-    padding: 2.2rem 1rem 0 1rem;
-    gap: 1.2rem;
-    box-shadow: -4px 0 16px rgba(218, 165, 32, 0.06);
-    z-index: 1002;
-    transition: right 0.44s cubic-bezier(0.39, 0.58, 0.57, 1);
+    padding: 20px;
+    box-shadow: 0 4px 8px var(--shadow);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    
   }
 
-  .navbar-links.open {
-    right: 0;
-  }
-
-  .navbar-links li {
-    width: 100%;
-  }
-
-  .navbar-links a {
-    width: 100%;
-    display: block;
-    font-size: 1rem;
-  }
-
-  .dropdown-menu,
-  .nested-menu {
-    position: static;
+  .nav-links.active {
+    transform: translateY(0);
     opacity: 1;
     visibility: visible;
-    transform: none;
-    box-shadow: none;
-    border-left: none;
-    background: inherit;
-    transition: none; /* Disable transitions on mobile for instant toggle */
   }
 
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 14px;
+    border-bottom: 1px solid var(--accent-color);
+  }
+
+  /* Dropdown for Mobile */
   .dropdown-menu {
-    min-width: 100%;
+    position: static;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown-menu li {
+    width: 100%;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 30px;
   }
 
   .nested-menu {
-    min-width: 100%;
+    position: static;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
   }
 
-  .mobile-hamburger {
-    display: flex;
-    z-index: 1111;
-    margin-left: 14px;
+  .nested-menu li {
+    width: 100%;
   }
 
-  .mobile-hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
+  .nested-menu a {
+    padding: 10px 50px;
   }
 
-  .mobile-hamburger.active span:nth-child(2) {
-    opacity: 0;
+  /* Top Bar Adjustments */
+  .top-bar {
+    width: 100%;
+     padding: 1px;
+     display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap: 4px;
+    text-align: center;
+
+
   }
 
-  .mobile-hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+  .top-left {
+    flex-direction: column;
+    gap: 4px;
+  }
+   .top-left span,
+  .top-left a {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 15px;
   }
 }
 
-/* Extra Small Screens */
+/* Small Mobile */
 @media (max-width: 480px) {
-  .top-header,
-  .navbar {
-    padding: 0.2rem 2.5%;
-    font-size: 0.89rem;
+  .nav-container {
+    padding: 10px 15px;
   }
 
-  .navbar-logo img {
-    height: 32px;
+  .logo img {
+    height: 40px;
   }
 
-  .navbar-contact {
-    font-size: 0.83rem;
-    padding: 0.5rem 1.3rem;
+  .nav-links {
+    padding: 15px;
+  }
+
+  .nav-links a {
+    padding: 12px;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 20px;
+  }
+
+  .nested-menu a {
+    padding: 10px 30px;
   }
 }
