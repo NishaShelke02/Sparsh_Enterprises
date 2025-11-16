@@ -84,7 +84,7 @@ body {
   background-color: var(--background-color);
   box-shadow: 0 2px 5px var(--shadow);
   position: fixed; 
-  margin-top: 10px;
+  margin-top: 40px;
 
   top: 10px;
   width: 100%;
