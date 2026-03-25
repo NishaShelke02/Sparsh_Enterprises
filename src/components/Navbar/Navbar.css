@@ -86,7 +86,7 @@ body {
   position: fixed; 
   margin-top: 40px;
 
-  top: 10px;
+  top: 0px;
   width: 100%;
   z-index: 1000;
 }
